@@ -20,7 +20,12 @@ export class TodoService {
     return this.todos;
   }
 
-  complete(todo: Todo) {}
+  complete(todo: Todo) {
+    const found = this.todos.find(x => x.name === todo.name);
+    if (found) {
+      found.completed = !todo.completed;
+    }
+  }
 
   remove(todo: Todo) {}
 }

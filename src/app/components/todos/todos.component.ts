@@ -23,6 +23,12 @@ export class TodosComponent implements OnInit {
       name: this.name.value,
       completed: false
     };
-    this.todos = this.todoService.add(newTodo);
+    this.todoService.add(newTodo);
+    this.name.setValue('');
+  }
+
+  edit(todo: Todo) {
+    // todo.completed = !todo.completed;
+    this.todoService.complete(todo);
   }
 }

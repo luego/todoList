@@ -16,7 +16,10 @@
   </div>
 </div>
 <div class="row justify-content-md-center">
-  <ul *ngIf="todos" class="list-group">
-    <li class="list-group-item" *ngFor="let item of todos">{{ item.name }}</li>
+  <ul *ngIf="todos" class="list-group col-12">
+    <li class="list-group-item" *ngFor="let item of todos">
+      <input type="checkbox" (click)="edit(item)">
+      <span [ngClass]="{'completed': item.completed}"> {{item.name }}</span>
+    </li>
   </ul>
 </div>
