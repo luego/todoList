@@ -31,4 +31,21 @@ export class TodosComponent implements OnInit {
     // todo.completed = !todo.completed;
     this.todoService.complete(todo);
   }
+
+  filterTodos(filterString: string) {
+    switch (filterString) {
+      case 'all':
+        this.todos = this.todoService.getAll();
+        break;
+      case 'uncompleted':
+        this.todos = this.todoService.getUnCompleted();
+        break;
+      case 'completed':
+        this.todos = this.todoService.getCompleted();
+        break;
+
+      default:
+        break;
+    }
+  }
 }

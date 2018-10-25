@@ -16,6 +16,9 @@
   </div>
 </div>
 <div class="row justify-content-md-center">
+  <a class="btn btn-clear" (click)="filterTodos('all')">All</a>
+  <a class="btn btn-clear" (click)="filterTodos('uncompleted')">Uncompleted</a>
+  <a class="btn btn-clear" (click)="filterTodos('completed')">Completed</a>
   <ul *ngIf="todos" class="list-group col-12">
     <li class="list-group-item" *ngFor="let item of todos">
       <input type="checkbox" (click)="edit(item)">

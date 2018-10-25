@@ -27,5 +27,13 @@ export class TodoService {
     }
   }
 
+  getCompleted() {
+    return this.todos.filter(x => x.completed === true);
+  }
+
+  getUnCompleted() {
+    return this.todos.filter(x => x.completed === false);
+  }
+
   remove(todo: Todo) {}
 }
